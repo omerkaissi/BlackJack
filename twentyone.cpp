@@ -1,8 +1,3 @@
-/*******************************************************************************
- * CS 103 Twenty-One (Blackjack) Project
-/******************************************************************************/
-
-// Add other #includes if you need
 #include <iostream>
 #include <cstdlib>
 
@@ -18,7 +13,7 @@ int getBestScore(int hand[], int numCards);
 const int NUM_CARDS = 52;
 
 /**
- * Global arrays to be used as look-up tables. You 
+ * Global arrays to be used as look-up tables.
  */
 const char suit[4] = {'H','S','D','C'};
 const char* type[13] = 
@@ -33,7 +28,6 @@ const int value[13] = {2,3,4,5,6,7,8,9,10,10,10,10,11};
  */
 void shuffle(int cards[])
 {
-  /******** You complete ****************/
   int n = NUM_CARDS;
   for(int i = n - 1; i > 0; i--){
     int j = rand() % (i + 1);
@@ -57,7 +51,6 @@ void shuffle(int cards[])
  */
 void printCard(int id)
 {
-  /******** You complete ****************/
   int typeIndex = id % 13; //takes the modulo based off the ammount of cards there are in a suit of cards
   int suitIndex = id / 13;
 
@@ -74,7 +67,6 @@ void printCard(int id)
  */
 int cardValue(int id)
 {
-  /******** You complete ****************/
   int cardValue = value[id%13];
   return cardValue;
 }
@@ -86,7 +78,6 @@ int cardValue(int id)
  */
 void printHand(int hand[], int numCards)
 {
-  /******** You complete ****************/
   for(int i = 0; i<=numCards; i++){
     printCard(hand[i]);
     cout << " ";
@@ -102,7 +93,6 @@ void printHand(int hand[], int numCards)
  */
 int getBestScore(int hand[], int numCards)
 {
-  /******** You complete ****************/
   //find out if ace will be 1 or 11
   //ace should be 1 if phand is more than 21 at 11
   int sumOfHand = 0;
@@ -130,9 +120,6 @@ int dealCard(int hand[], int cards[], int dealtCards, int handIndex) {
  */
 int main(int argc, char* argv[])
 {
-  //---------------------------------------
-  // Do not change this code -- Begin
-  //---------------------------------------
   if(argc < 2){
     cout << "Error - Please provide the seed value." << endl;
     return 1;
@@ -143,11 +130,6 @@ int main(int argc, char* argv[])
   int cards[52];
   int dhand[9];
   int phand[9];
-  //---------------------------------------
-  // Do not change this code -- End
-  //---------------------------------------
-
-  /******** You complete ****************/
 
   /* Initiate cards */
   int dealtCardsIndex = -1; 
@@ -241,7 +223,8 @@ int main(int argc, char* argv[])
           cout << "Player: ";
           printHand(phand, playerHandIndex);
             
-        } else {
+        } 
+        else {
           break;
         }
       } 
